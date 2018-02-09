@@ -1,0 +1,19 @@
+/**
+ * Adapted from:
+ * http://www.puzzlr.org/force-directed-graph-minimal-working-example/
+ */
+
+.links line {
+    stroke: #999;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;
+}
+   
+.nodes circle {
+    /* fill: rgb(128,128,128); */
+    fill-opacity: 1.0;
+
+    stroke: #fff;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;   
+}

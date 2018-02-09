@@ -1,0 +1,86 @@
+{
+    "nodes": [
+        {
+            "node_id": 0,
+            "node_label": "javascript",
+            "fsa_group_id": 1
+        },
+        {
+            "node_id": 1,
+            "node_label": "ruby",
+            "fsa_group_id": 1
+        },
+        {
+            "node_id": 2,
+            "node_label": "dev1",
+            "fsa_group_id": 0
+        },
+        {
+            "node_id": 3,
+            "node_label": "dev2",
+            "fsa_group_id": 0
+        },
+        {
+            "node_id": 4,
+            "node_label": "java",
+            "fsa_group_id": 3
+        },
+        {
+            "node_id": 5,
+            "node_label": "python",
+            "fsa_group_id": 1
+        },
+        {
+            "node_id": 6,
+            "node_label": "c++",
+            "fsa_group_id": 2
+        },
+        {
+            "node_id": 7,
+            "node_label": "c",
+            "fsa_group_id": 2
+        }
+    ],
+    "links": [
+        {
+            "source": 2,
+            "value": 1.0,
+            "target": 5
+        },
+        {
+            "source": 2,
+            "value": 1.0,
+            "target": 4
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 7
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 6
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 0
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 1
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 5
+        },
+        {
+            "source": 3,
+            "value": 1.0,
+            "target": 4
+        }
+    ]
+}
