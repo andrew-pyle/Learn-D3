@@ -59,7 +59,7 @@
         },
         {
             "source": 3,
-            "value": 1.0,
+            "value": 4.0,
             "target": 6
         },
         {
@@ -69,12 +69,12 @@
         },
         {
             "source": 3,
-            "value": 1.0,
+            "value": 2.0,
             "target": 1
         },
         {
             "source": 3,
-            "value": 1.0,
+            "value": 1.5,
             "target": 5
         },
         {

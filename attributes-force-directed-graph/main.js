@@ -36,7 +36,8 @@ $(document).ready(function() {
                       .selectAll("line")
                       .data(links)
                       .enter()
-                      .append("line");
+                      .append("line")
+                      .attr("stroke-width", linkWidthByWeight);
         
         // Draw nodes on top of links
         var node = svg.append("g")
@@ -67,9 +68,14 @@ $(document).ready(function() {
                 .attr("y2", function(d) { return d.target.y; });
         }
         
-        // node_id determines color palette index
+        // nodes.node_id determines color palette index
         function colorById(d) {
             return assignColor(d.fsa_group_id);
+        }
+
+        // links.value determines link width
+        function linkWidthByWeight(d) {
+            return d.value;
         }
     })
 });

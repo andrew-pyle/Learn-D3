@@ -4,3 +4,4 @@ _site/
 
 # Visual Studio Code Config
 .vscode
+*.code-workspace
