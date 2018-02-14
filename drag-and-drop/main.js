@@ -1,5 +1,5 @@
-// Adapted from:
-// http://www.puzzlr.org/force-directed-graph-using-node-and-link-attributes/
+// Adapted from 
+// http://www.puzzlr.org/making-a-dragable-force-directed-graph/
 
 $(document).ready(function() {
     d3.json("graph.json", function(data) {
@@ -13,14 +13,14 @@ $(document).ready(function() {
         var width = parseInt(svg.attr("width"));
         var height =  parseInt(svg.attr("height"));
 
-        // Use node_id as node identification method for link connections
+        // Return node_id from dataset as node identification method for link 
+        // connections
         var link_force = d3.forceLink(links)
                            .id(function(d) { return d.node_id; });
 
         // Engine
-        var simulation = 
-            d3.forceSimulation()
-              .nodes(nodes)
+        var simulation = d3.forceSimulation()
+                           .nodes(nodes)
         
         simulation.force("charge", d3.forceManyBody())
                   .force("center", d3.forceCenter(width / 2, height / 2))
@@ -30,7 +30,7 @@ $(document).ready(function() {
         // 10 color categorical palette from D3.js
         var assignColor = d3.scaleOrdinal(d3.schemeCategory10);
 
-        // Draw links under nodes
+        // Draw links first so they are underneath nodes
         var link = svg.append("g")
                       .attr("class", "links")
                       .selectAll("line")
@@ -49,11 +49,37 @@ $(document).ready(function() {
                   .attr("r", 10)
                   .attr("fill", colorById);
 
+        // TODO Understand below
+        // TODO reheat sim? dots detach from links after their "cx" & "cy" stop
         
+         // Drag-n-drop event handler
+         var drag_handler = d3.drag()
+         .on("start", function(d) {
+             if (!d3.event.active) {
+                 simulation.alphaTarget(0.9).restart();
+             }
+             d.fx = d.x;
+             d.fy = d.y;
+         })
+         .on("drag", function(d) {
+             d.fx = d3.event.x;
+             d.y = d3.event.y;
+         })
+         .on("end", function(d) {
+             if (!d3.event.active) {
+                 simulation.alphaTarget(0);
+             }
+             d.fx = null;
+             d.fy = null;
+             // d.fx = d3.event.x;
+             // d.fy = d3.event.y;
+         });
+
+        // Apply drag event handler to nodes
+        drag_handler(node);
 
         // Make the SVG boogy!
         simulation.on("tick", tickActions);
-
         
         // Teach the SVG how to boogy!
         function tickActions() {
