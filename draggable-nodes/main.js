@@ -63,7 +63,7 @@ $(document).ready(function() {
          })
          .on("drag", function(d) {
              d.fx = d3.event.x;
-             d.y = d3.event.y;
+             d.fy = d3.event.y;
          })
          .on("end", function(d) {
              if (!d3.event.active) {
