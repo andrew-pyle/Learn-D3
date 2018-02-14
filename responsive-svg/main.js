@@ -1,5 +1,5 @@
 // Adapted from:
-// http://www.puzzlr.org/d3-drag-minimal-working-example/
+// http://www.puzzlr.org/making-a-dragable-force-directed-graph/
 // https://jsfiddle.net/shawnbot/BJLe6/
 // https://chartio.com/resources/tutorials/how-to-resize-an-svg-when-the-window-is-resized-in-d3-js/
 // https://stackoverflow.com/questions/9400615/whats-the-best-way-to-make-a-d3-js-visualisation-layout-responsive
@@ -74,7 +74,7 @@ $(document).ready(function() {
             })
             .on("drag", function(d) {
                 d.fx = d3.event.x;
-                d.y = d3.event.y;
+                d.fy = d3.event.y;
             })
             .on("end", function(d) {
                 if (!d3.event.active) {
