@@ -1,4 +1,4 @@
-Gallery of [D3.js](https://d3js.org/) Visualizations
+# Gallery of [D3.js](https://d3js.org/) Visualizations
 
 ## Force-Directed Graph
 - [Basic Force-Directed Graph](basic-force-directed-graph/index.html)
