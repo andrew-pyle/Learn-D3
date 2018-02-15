@@ -1,5 +1,8 @@
 # Gallery of [D3.js](https://d3js.org/) Visualizations
 
+## SVG
+- [Raw SVG document](raw-svg.html)
+
 ## Force-Directed Graph
 - [Basic Force-Directed Graph](basic-force-directed-graph/index.html)
 - [Colored Force-Directed Graph](attributes-force-directed-graph/index.html)
