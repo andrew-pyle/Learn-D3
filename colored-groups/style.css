@@ -1,0 +1,33 @@
+.svg-container {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    /* padding-bottom: 100%; */
+    overflow: hidden;
+    background-color: #eee;
+} 
+
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.links line {
+    stroke: #999;
+    /* 2px looks good, but width is dynamically set by link weight */
+    /* stroke-width: 2px;  */
+    stroke-opacity: 0.6;
+}
+   
+.nodes circle {
+    /* fill: rgb(128,128,128); */
+    fill-opacity: 1.0;
+
+    stroke: #fff;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;   
+}
+
